@@ -12,10 +12,7 @@ const HEROES: Hero[] = [
   { id: 14, name: 'Celeritas' },
   { id: 15, name: 'Magneta' },
   { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  { id: 17, name: 'Dynama' }
 ];
 
 @Component({
@@ -38,6 +35,17 @@ const HEROES: Hero[] = [
         <input [(ngModel)]="selectedHero.name" placeholder="name"/>
       </div>
     </div>
+    <h3>Username</h3>
+    <ul>
+      <li *ngFor="let hobby of hobbies">
+        {{hobby}}
+      </li>
+    </ul>
+    <form>
+      <label>User: </label><br />
+      <input type = "text" name="title" [(ngModel)]="title" />
+    </form>
+    
   `,
   styles: [`
     .selected {
@@ -90,12 +98,13 @@ const HEROES: Hero[] = [
   `]
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'C';
   heroes = HEROES;
   selectedHero: Hero;
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
+  hobbies = ['sports', 'music', 'running'];
 }
 
 
